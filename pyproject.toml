@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lucidsat"
+version = "0.1.0"
+description = "A readable CDCL SAT solver in pure Python"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["sat", "solver", "cdcl", "logic", "education"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Intended Audience :: Education",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+lucidsat = "lucidsat.__main__:main"
+
+[tool.setuptools]
+packages = ["lucidsat"]
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+testpaths = ["lucidsat", "tests"]
